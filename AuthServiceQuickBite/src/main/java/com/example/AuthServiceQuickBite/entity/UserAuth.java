@@ -35,5 +35,6 @@ public class UserAuth {
 
     @Column(name = "ultimo_acceso")
     private LocalDateTime ultimoAcceso;
+    //prueba git 1
 
 }
