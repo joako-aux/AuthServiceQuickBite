@@ -2,6 +2,8 @@ package com.example.AuthServiceQuickBite.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode; // <--- NUEVO IMPORT
+import java.sql.Types;                       // <--- NUEVO IMPORT
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -16,6 +18,7 @@ import java.util.UUID;
 public class UserAuth {
 
     @Id
+    @JdbcTypeCode(Types.VARCHAR) // <--- ESTO SOLUCIONA EL ERROR 1366
     private UUID id;
 
     @Column(nullable = false, unique = true)
@@ -36,5 +39,4 @@ public class UserAuth {
     @Column(name = "ultimo_acceso")
     private LocalDateTime ultimoAcceso;
     //prueba git 1
-
 }
